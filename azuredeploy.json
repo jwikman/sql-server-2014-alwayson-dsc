@@ -300,7 +300,7 @@
 
     "updateSQLCNic2": "updateSQLCNic2",
     "updateSQLCNic2Id": "[concat('Microsoft.Resources/deployments/', variables('updateSQLCNic2'))]",
-    "sqlNicName2": "SqlMachine-Nic-
+    "sqlNicName2": "SqlMachine-Nic-1",
 
     "publicLBName": "sqlLoadBalancer",
     "sqllbID":"[resourceId('Microsoft.Network/loadBalancers',variables('publicLBName'))]",

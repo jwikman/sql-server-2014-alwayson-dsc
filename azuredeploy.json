@@ -303,6 +303,8 @@
     "sqlNicName2": "SqlMachine-Nic-1",
 
     "publicLBName": "sqlLoadBalancer",
+    "lbFE": "SqlLBFE",
+    "lbBE": "SqlLBBE",
     "sqllbID":"[resourceId('Microsoft.Network/loadBalancers',variables('publicLBName'))]",
     "sqllbFEConfigID": "[concat(variables('sqllbID'),'/frontendIPConfigurations/',variables('lbFE'))]",
     "sqlBEAddressPoolID": "[concat(variables('sqllbID'),'/backendAddressPools/',variables('lbBE'))]",

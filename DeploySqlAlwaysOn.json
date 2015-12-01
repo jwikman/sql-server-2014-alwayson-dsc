@@ -164,9 +164,11 @@
       "properties": {
         "publisher": "Microsoft.Powershell",
         "type": "DSC",
-        "typeHandlerVersion": "2.6",
+        "typeHandlerVersion": "2.10",
+		"autoUpgradeMinorVersion": false,
         "settings": {
-          "modulesUrl": "[variables('sqlAOPrepareModulesURL')]",
+          "wmfVersion": "4.0",
+		  "modulesUrl": "[variables('sqlAOPrepareModulesURL')]",
           "configurationFunction": "[variables('sqlAOPrepareConfigurationFunction')]",
           "properties": {
             "domainName": "[parameters('domainName')]",
@@ -198,10 +200,12 @@
 				"[concat('Microsoft.Compute/virtualMachines/',parameters('sqlVMNamePrefix'),'0/extensions/sqlAOPrepare')]"
 			],
 			"properties": {
-        "publisher": "Microsoft.Powershell",
+				"publisher": "Microsoft.Powershell",
 				"type": "DSC",
-				"typeHandlerVersion": "2.6",
+				"typeHandlerVersion": "2.10",
+				"autoUpgradeMinorVersion": false,
 				"settings": {
+					"wmfVersion": "4.0",
 					"modulesUrl": "[variables('createClusterModulesURL')]",
 					"configurationFunction": "[variables('createClusterConfigurationFunction')]",
 					"properties": {

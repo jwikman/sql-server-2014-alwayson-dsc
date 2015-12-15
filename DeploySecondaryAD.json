@@ -75,8 +75,10 @@
       "properties": {
         "publisher": "Microsoft.Powershell",
         "type": "DSC",
-        "typeHandlerVersion": "2.6",
+        "typeHandlerVersion": "2.10",
+		"autoUpgradeMinorVersion": false,
         "settings": {
+          "wmfVersion": "4.0",
           "modulesUrl": "[variables('adBDCModulesURL')]",
           "configurationFunction": "[variables('adBDCConfigurationFunction')]",
           "properties": {

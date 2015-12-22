@@ -15,7 +15,7 @@
         "description": "The domain name"
       }
     },
-    
+
     "dnsPrefix": {
       "type": "string",
       "metadata": {
@@ -29,7 +29,7 @@
         "description": "The share path"
       }
     },
-    
+
     "sqlwVMName": {
       "type": "string",
       "metadata": {
@@ -109,7 +109,7 @@
         "description": "sql AlwaysOn Availability Group Name"
       }
     },
-    
+
     "sqlAlwaysOnAvailabilityGroupListenerName": {
       "type": "string",
       "metadata": {
@@ -164,10 +164,10 @@
       "properties": {
         "publisher": "Microsoft.Powershell",
         "type": "DSC",
-        "typeHandlerVersion": "2.10",
-		"autoUpgradeMinorVersion": false,
+        "typeHandlerVersion": "2.11",
+		    "autoUpgradeMinorVersion": false,
         "settings": {
-          "wmfVersion": "4.0",
+          "wmfVersion": "5.0",
 		  "modulesUrl": "[variables('sqlAOPrepareModulesURL')]",
           "configurationFunction": "[variables('sqlAOPrepareConfigurationFunction')]",
           "properties": {

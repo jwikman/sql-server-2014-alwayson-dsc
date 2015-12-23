@@ -156,9 +156,9 @@
   "variables": {
     "apiVersion": "2015-01-01",
     "apiVersionNetworks": "2015-06-15",
-    "apiVersionVirtualMachines": "2015-12-01",
+    "apiVersionVirtualMachines": "2015-06-15",
     "apiVersionVMExtensions": "2015-06-15",
-    "apiVersionStorage": "2015-12-01",
+    "apiVersionStorage": "2015-06-15",
     "windowsDiskSize": 128,
     "publicLBName": "ADPublicLoadBalancer",
     "publicIPAddressName": "[concat(parameters('availabilitySetName'), 'PublicIp')]",
@@ -198,11 +198,11 @@
     {
       "type": "Microsoft.Compute/availabilitySets",
       "name": "[parameters('availabilitySetName')]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "location": "[parameters('location')]"
     },
     {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "name": "[variables('publiclbName')]",
       "type": "Microsoft.Network/loadBalancers",
       "location": "[parameters('location')]",
@@ -248,7 +248,7 @@
       "dependsOn": [
         "[concat('Microsoft.Network/loadBalancers/',variables('publicLBName'))]"
       ],
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "properties": {
         "ipConfigurations": [
           {
@@ -281,7 +281,7 @@
       "dependsOn": [
         "[concat('Microsoft.Network/loadBalancers/',variables('publicLBName'))]"
       ],
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "properties": {
         "ipConfigurations": [
           {
@@ -298,7 +298,7 @@
       }
     },
     {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionVirtualMachines')]",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[concat(parameters('vmNamePrefix'), copyindex())]",
       "location": "[parameters('location')]",

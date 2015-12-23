@@ -148,7 +148,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-11-01",
     "sqlWitnessNicName": "SqlWitnessMachine-Nic-0",
     "vmContainerName": "vhds"
   },

@@ -64,7 +64,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-11-01",
     "adPDCModulesURL": "[concat(parameters('assetLocation'),'/CreateADPDC.ps1.zip')]",
     "adPDCConfigurationFunction": "CreateADPDC.ps1\\CreateADPDC"
   },

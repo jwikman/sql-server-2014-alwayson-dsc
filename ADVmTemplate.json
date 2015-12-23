@@ -154,7 +154,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-11-01",
     "windowsDiskSize": 128,
     "publicLBName": "ADPublicLoadBalancer",
     "publicIPAddressName": "[concat(parameters('availabilitySetName'), 'PublicIp')]",

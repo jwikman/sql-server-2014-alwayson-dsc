@@ -150,7 +150,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-11-01",
     "sqlAOPrepareModulesURL":"[concat(parameters('assetLocation'),'/PrepareAlwaysOnSqlServer.ps1.zip')]",
     "sqlAOPrepareConfigurationFunction": "PrepareAlwaysOnSqlServer.ps1\\PrepareAlwaysOnSqlServer",
     "createClusterModulesURL":"[concat(parameters('assetLocation'),'/CreateFailoverCluster.ps1.zip')]",

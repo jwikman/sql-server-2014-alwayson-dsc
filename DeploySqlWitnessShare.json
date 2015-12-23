@@ -72,7 +72,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-06-15",
+    "apiVersion": "2015-11-01",
     "fswModulesURL": "[concat(parameters('assetLocation'),'/CreateFileShareWitness.ps1.zip')]",
     "fswConfigurationFunction": "CreateFileShareWitness.ps1\\CreateFileShareWitness"
   },

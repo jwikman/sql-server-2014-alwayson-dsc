@@ -150,7 +150,11 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-11-01",
+    "apiVersion": "2015-01-01",
+    "apiVersionNetworks": "2015-06-15",
+    "apiVersionVirtualMachines": "2015-12-01",
+    "apiVersionVMExtensions": "2015-06-15",
+    "apiVersionStorage": "2015-12-01",
     "sqlAOPrepareModulesURL":"[concat(parameters('assetLocation'),'/PrepareAlwaysOnSqlServer.ps1.zip')]",
     "sqlAOPrepareConfigurationFunction": "PrepareAlwaysOnSqlServer.ps1\\PrepareAlwaysOnSqlServer",
     "createClusterModulesURL":"[concat(parameters('assetLocation'),'/CreateFailoverCluster.ps1.zip')]",
@@ -161,7 +165,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('sqlVMNamePrefix'),'0/sqlAOPrepare')]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionVMExtensions')]",
       "location": "[parameters('location')]",
       "dependsOn": [
       ],
@@ -198,7 +202,7 @@
     {
 			"type": "Microsoft.Compute/virtualMachines/extensions",
 			"name": "[concat(parameters('sqlVMNamePrefix'),'1/CreateCluster')]",
-			"apiVersion": "[variables('apiVersion')]",
+			"apiVersion": "[variables('apiVersionVMExtensions')]",
 			"location": "[parameters('location')]",
 			"dependsOn":[
 				"[concat('Microsoft.Compute/virtualMachines/',parameters('sqlVMNamePrefix'),'0/extensions/sqlAOPrepare')]"

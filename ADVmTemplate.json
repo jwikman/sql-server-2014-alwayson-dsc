@@ -154,7 +154,11 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-11-01",
+    "apiVersion": "2015-01-01",
+    "apiVersionNetworks": "2015-06-15",
+    "apiVersionVirtualMachines": "2015-12-01",
+    "apiVersionVMExtensions": "2015-06-15",
+    "apiVersionStorage": "2015-12-01",
     "windowsDiskSize": 128,
     "publicLBName": "ADPublicLoadBalancer",
     "publicIPAddressName": "[concat(parameters('availabilitySetName'), 'PublicIp')]",
@@ -173,14 +177,14 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[parameters('storageAccount')]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionStorage')]",
       "location": "[parameters('location')]",
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
       }
     },
     {
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionNetworks')]",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",

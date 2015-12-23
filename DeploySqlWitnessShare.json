@@ -72,7 +72,11 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-11-01",
+    "apiVersion": "2015-01-01",
+    "apiVersionNetworks": "2015-06-15",
+    "apiVersionVirtualMachines": "2015-12-01",
+    "apiVersionVMExtensions": "2015-06-15",
+    "apiVersionStorage": "2015-12-01",
     "fswModulesURL": "[concat(parameters('assetLocation'),'/CreateFileShareWitness.ps1.zip')]",
     "fswConfigurationFunction": "CreateFileShareWitness.ps1\\CreateFileShareWitness"
   },
@@ -80,7 +84,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('sqlwVMName'),'/CreateFileShareWitness')]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "[variables('apiVersionVMExtensions')]",
       "location": "[parameters('location')]",
       "dependsOn": [
       ],

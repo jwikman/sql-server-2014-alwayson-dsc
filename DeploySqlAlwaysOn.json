@@ -81,7 +81,12 @@
         "Southeast Asia",
         "Japan East",
         "Japan West",
-        "Southeast Asia"
+        "Brazil South",
+        "Australia East",
+        "Australia Southeast",
+        "Central India",
+        "South India",
+        "West India"
       ],
       "metadata": {
         "description": "The region to deploy the resources into"
@@ -92,8 +97,7 @@
       "type": "string",
       "metadata": {
         "description": "The SQL Server Service account name"
-      },
-      "defaultValue": "sqlservice"
+      }
     },
 
     "sqlAlwaysOnEndpointName": {
@@ -142,11 +146,11 @@
       "type": "string",
       "metadata": {
         "description": "The location of resources that the script is dependent on such as linked templates and DSC modules"
-      },
-      "defaultValue": "http://honcaotemplate.blob.core.windows.net/templates"
+      }
     }
   },
   "variables": {
+    "apiVersion": "2015-06-15",
     "sqlAOPrepareModulesURL":"[concat(parameters('assetLocation'),'/PrepareAlwaysOnSqlServer.ps1.zip')]",
     "sqlAOPrepareConfigurationFunction": "PrepareAlwaysOnSqlServer.ps1\\PrepareAlwaysOnSqlServer",
     "createClusterModulesURL":"[concat(parameters('assetLocation'),'/CreateFailoverCluster.ps1.zip')]",
@@ -157,7 +161,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('sqlVMNamePrefix'),'0/sqlAOPrepare')]",
-      "apiVersion": "2015-05-01-preview",
+      "apiVersion": "[variables('apiVersion')]",
       "location": "[parameters('location')]",
       "dependsOn": [
       ],
@@ -194,7 +198,7 @@
     {
 			"type": "Microsoft.Compute/virtualMachines/extensions",
 			"name": "[concat(parameters('sqlVMNamePrefix'),'1/CreateCluster')]",
-			"apiVersion": "2015-05-01-preview",
+			"apiVersion": "[variables('apiVersion')]",
 			"location": "[parameters('location')]",
 			"dependsOn":[
 				"[concat('Microsoft.Compute/virtualMachines/',parameters('sqlVMNamePrefix'),'0/extensions/sqlAOPrepare')]"

@@ -58,19 +58,11 @@
     "sqlAlwaysOnAvailabilityGroupName1": {
       "type": "string"
     },
-    
-    "sqlAlwaysOnAvailabilityGroupName2": {
-      "type": "string"
-    },
 
     "sqlAlwaysOnAvailabilityGroupListenerName1": {
       "type": "string"
     },
     
-    "sqlAlwaysOnAvailabilityGroupListenerName2": {
-      "type": "string"
-    },
-
     "assetLocation": {
       "type": "string"
     }

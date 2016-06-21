@@ -221,13 +221,6 @@ configuration CreateFailoverCluster
             DependsOn = "[xSqlLogin]AddSqlServerServiceAccountToSysadminServerRole"
         }
 
-        xSQLServerStorageSettings AddSQLServerStorageSettings
-        {
-            InstanceName = "MSSQLSERVER"
-            OptimizationType = $WorkloadType
-            DependsOn = "[xSqlTsqlEndpoint]AddSqlServerEndpoint"
-        }
-
         LocalConfigurationManager 
         {
             RebootNodeIfNeeded = $true
@@ -317,16 +310,6 @@ configuration CreateFailoverCluster
 	        DependsOn="[xSqlEndpoint]SqlSecondaryAlwaysOnEndpoint"
         }
            
-        xSqlNewAGDatabase SQLAGDatabases
-        {
-            SqlAlwaysOnAvailabilityGroupName = $SqlAlwaysOnAvailabilityGroupName
-            DatabaseNames = $DatabaseNames
-            PrimaryReplica = $PrimaryReplica
-            SecondaryReplica = $SecondaryReplica
-            SqlAdministratorCredential = $SQLCreds
-	        DependsOn = "[xSqlAvailabilityGroup]SqlAG"
-        }
-
         xSqlAvailabilityGroupListener SqlAGListener
         {
             Name = $SqlAlwaysOnAvailabilityGroupListenerName
@@ -338,7 +321,7 @@ configuration CreateFailoverCluster
             InstanceName = $env:COMPUTERNAME
             DomainCredential = $DomainCreds
             SqlAdministratorCredential = $Admincreds
-            DependsOn = "[xSqlNewAGDatabase]SQLAGDatabases"
+            DependsOn = "[xSqlAvailabilityGroup]SqlAG"
         }
 
         LocalConfigurationManager 
